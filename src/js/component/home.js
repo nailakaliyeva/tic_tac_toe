@@ -10,18 +10,6 @@ export class Home extends React.Component {
 		this.state = {
 			player: "X"
 		};
-
-		let blank = {
-			a1: null,
-			a2: null,
-			a3: null,
-			b1: null,
-			b2: null,
-			b3: null,
-			c1: null,
-			c2: null,
-			c3: null
-		};
 	}
 	winner = {
 		aHor: ["a1", "a2", "a3"],
@@ -43,6 +31,27 @@ export class Home extends React.Component {
 				e.target.innerHTML = this.state.player;
 				this.setState({ player: "X" });
 			}
+		}
+		let comp = {
+			a1: document.querySelector("#a1").innerHTML,
+			a2: document.querySelector("#a2").innerHTML,
+			a3: document.querySelector("#a3").innerHTML,
+			b1: document.querySelector("#b1").innerHTML,
+			b2: document.querySelector("#b2").innerHTML,
+			b3: document.querySelector("#b3").innerHTML,
+			c1: document.querySelector("#c1").innerHTML,
+			c2: document.querySelector("#c2").innerHTML,
+			c3: document.querySelector("#c3").innerHTML
+		};
+
+		if (comp.a1 === comp.a2 && comp.a1 === comp.a3 && comp.a1 !== "") {
+			alert("WINNER!");
+		} else if (
+			comp.b1 === comp.b2 &&
+			comp.b1 === comp.b3 &&
+			comp.b1 !== ""
+		) {
+			alert("WINNER!");
 		}
 	}
 	render() {
