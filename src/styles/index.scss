@@ -3,6 +3,7 @@ body{
     padding-left: 25%;
     padding-right: 25%;
     padding-top: 2%;
+    background-color: #eef10bab;
 }
 .parent{
     margin: auto;
@@ -17,12 +18,12 @@ body{
     width: 100%;
     margin: auto;
     font-size: 100px;
-    color: #e0452d;
+    color: rgb(250, 6, 6);;
     padding-left: 9%;
 }
 #a1, #b1, #c1, #a2, #b2, #c2{
-    border-right: 10px solid #1d0773;
+    border-right: 10px solid  black;
 }
 #a1, #a2, #a3, #b1, #b2, #b3{
-    border-bottom: 10px solid #1d0773;
+    border-bottom: 10px solid black;
 }
