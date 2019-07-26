@@ -43,7 +43,9 @@ export class Home extends React.Component {
 		};
 		// 1st winning option comparison
 		if (comp.a1 === comp.a2 && comp.a1 === comp.a3 && comp.a1 !== "") {
-			alert("WINNER!");
+			setTimeout(function() {
+				alert("WINNER");
+			}, 100);
 		}
 		// 2nd winning option comparison
 		else if (comp.b1 === comp.b2 && comp.b1 === comp.b3 && comp.b1 !== "") {
