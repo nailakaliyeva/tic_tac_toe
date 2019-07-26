@@ -11,16 +11,16 @@ export class Home extends React.Component {
 			player: "X"
 		};
 	}
-	winner = {
-		aHor: ["a1", "a2", "a3"],
-		bHor: ["b1", "b2", "b3"],
-		cHor: ["c1", "c2", "c3"],
-		aVirt: ["a1", "b1", "c1"],
-		bVirt: ["a2", "b2", "c2"],
-		cVirt: ["a3", "b3", "c3"],
-		aDiag: ["a1", "b2", "c3"],
-		cDiag: ["a3", "b2", "c1"]
-	};
+	// winner = {
+	// 	aHor: ["a1", "a2", "a3"],
+	// 	bHor: ["b1", "b2", "b3"],
+	// 	cHor: ["c1", "c2", "c3"],
+	// 	aVirt: ["a1", "b1", "c1"],
+	// 	bVirt: ["a2", "b2", "c2"],
+	// 	cVirt: ["a3", "b3", "c3"],
+	// 	aDiag: ["a1", "b2", "c3"],
+	// 	cDiag: ["a3", "b2", "c1"]
+	// };
 
 	xo(e) {
 		if (e.target.innerHTML == "") {
@@ -43,14 +43,36 @@ export class Home extends React.Component {
 			c2: document.querySelector("#c2").innerHTML,
 			c3: document.querySelector("#c3").innerHTML
 		};
-
+		// 1
 		if (comp.a1 === comp.a2 && comp.a1 === comp.a3 && comp.a1 !== "") {
 			alert("WINNER!");
-		} else if (
-			comp.b1 === comp.b2 &&
-			comp.b1 === comp.b3 &&
-			comp.b1 !== ""
-		) {
+		}
+		// 2
+		else if (comp.b1 === comp.b2 && comp.b1 === comp.b3 && comp.b1 !== "") {
+			alert("WINNER!");
+		}
+		// 3
+		else if (comp.c1 === comp.c2 && comp.c1 === comp.c3 && comp.c1 !== "") {
+			alert("WINNER!");
+		}
+		// 4
+		else if (comp.a1 === comp.b1 && comp.a1 === comp.c1 && comp.a1 !== "") {
+			alert("WINNER!");
+		}
+		// 5
+		else if (comp.a2 === comp.b2 && comp.a2 === comp.c2 && comp.a2 !== "") {
+			alert("WINNER!");
+		}
+		// 6
+		else if (comp.a3 === comp.b3 && comp.a3 === comp.c3 && comp.a3 !== "") {
+			alert("WINNER!");
+		}
+		// 7
+		else if (comp.a1 === comp.b2 && comp.a1 === comp.c3 && comp.a1 !== "") {
+			alert("WINNER!");
+		}
+		// 8
+		else if (comp.a3 === comp.b2 && comp.a3 === comp.c1 && comp.a3 !== "") {
 			alert("WINNER!");
 		}
 	}
