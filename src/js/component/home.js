@@ -1,9 +1,5 @@
 import React from "react";
 
-//include images into your bundle
-//import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 export class Home extends React.Component {
 	constructor() {
 		super();
@@ -22,6 +18,7 @@ export class Home extends React.Component {
 	// 	cDiag: ["a3", "b2", "c1"]
 	// };
 
+	// function xo checks if the targeted area is empty and ONLY then changes state. This prevents overwriting
 	xo(e) {
 		if (e.target.innerHTML == "") {
 			if (this.state.player == "X") {
@@ -32,6 +29,7 @@ export class Home extends React.Component {
 				this.setState({ player: "X" });
 			}
 		}
+		//grabbing all the cells' id's and storing them in this object
 		let comp = {
 			a1: document.querySelector("#a1").innerHTML,
 			a2: document.querySelector("#a2").innerHTML,
@@ -43,35 +41,35 @@ export class Home extends React.Component {
 			c2: document.querySelector("#c2").innerHTML,
 			c3: document.querySelector("#c3").innerHTML
 		};
-		// 1
+		// 1st winning option comparison
 		if (comp.a1 === comp.a2 && comp.a1 === comp.a3 && comp.a1 !== "") {
 			alert("WINNER!");
 		}
-		// 2
+		// 2nd winning option comparison
 		else if (comp.b1 === comp.b2 && comp.b1 === comp.b3 && comp.b1 !== "") {
 			alert("WINNER!");
 		}
-		// 3
+		// 3rd winning option comparison
 		else if (comp.c1 === comp.c2 && comp.c1 === comp.c3 && comp.c1 !== "") {
 			alert("WINNER!");
 		}
-		// 4
+		// 4th winning option comparison
 		else if (comp.a1 === comp.b1 && comp.a1 === comp.c1 && comp.a1 !== "") {
 			alert("WINNER!");
 		}
-		// 5
+		// 5th winning option comparison
 		else if (comp.a2 === comp.b2 && comp.a2 === comp.c2 && comp.a2 !== "") {
 			alert("WINNER!");
 		}
-		// 6
+		// 6th winning option comparison
 		else if (comp.a3 === comp.b3 && comp.a3 === comp.c3 && comp.a3 !== "") {
 			alert("WINNER!");
 		}
-		// 7
+		// 7th winning option comparison
 		else if (comp.a1 === comp.b2 && comp.a1 === comp.c3 && comp.a1 !== "") {
 			alert("WINNER!");
 		}
-		// 8
+		// 8th winning option comparison
 		else if (comp.a3 === comp.b2 && comp.a3 === comp.c1 && comp.a3 !== "") {
 			alert("WINNER!");
 		}
