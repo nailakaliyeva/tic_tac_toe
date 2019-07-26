@@ -47,6 +47,7 @@ export class Home extends React.Component {
 				let btn = document.createElement("BUTTON");
 				btn.className = "btn btn-primary";
 				btn.innerHTML = "Reset";
+				btn.onClick = window.location.reload();
 				document.querySelector(".parent").appendChild(btn);
 				alert("WINNER");
 			}, 100);
