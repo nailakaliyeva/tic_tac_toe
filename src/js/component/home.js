@@ -7,16 +7,6 @@ export class Home extends React.Component {
 			player: "X"
 		};
 	}
-	// winner = {
-	// 	aHor: ["a1", "a2", "a3"],
-	// 	bHor: ["b1", "b2", "b3"],
-	// 	cHor: ["c1", "c2", "c3"],
-	// 	aVirt: ["a1", "b1", "c1"],
-	// 	bVirt: ["a2", "b2", "c2"],
-	// 	cVirt: ["a3", "b3", "c3"],
-	// 	aDiag: ["a1", "b2", "c3"],
-	// 	cDiag: ["a3", "b2", "c1"]
-	// };
 
 	// function xo checks if the targeted area is empty and ONLY then changes state. This prevents overwriting
 	xo(e) {
@@ -41,10 +31,38 @@ export class Home extends React.Component {
 			c2: document.querySelector("#c2").innerHTML,
 			c3: document.querySelector("#c3").innerHTML
 		};
+		let winner = {
+			aHor: document.querySelectorAll(".aHor"),
+			bHor: document.querySelectorAll(".bHor"),
+			cHor: document.querySelectorAll(".cHor"),
+			a1Virt: document.querySelectorAll(".a1Virt"),
+			a2Virt: document.querySelectorAll(".a2Virt"),
+			a3Virt: document.querySelectorAll(".a3Virt"),
+			a1Diag: document.querySelectorAll(".a1Diag"),
+			a3Diag: document.querySelectorAll(".a3Diag")
+		};
+		// let winningOptions = {
+		// 	a1: document.querySelector("#a1").style,
+		// 	a2: document.querySelector("#a2").style,
+		// 	a3: document.querySelector("#a3").style,
+		// 	b1: document.querySelector("#b1").style,
+		// 	b2: document.querySelector("#b2").style,
+		// 	b3: document.querySelector("#b3").style,
+		// 	c1: document.querySelector("#c1").style,
+		// 	c2: document.querySelector("#c2").style,
+		// 	c3: document.querySelector("#c3").style
+		// };
 		// 1st winning option comparison
 		if (comp.a1 === comp.a2 && comp.a1 === comp.a3 && comp.a1 !== "") {
 			setTimeout(function() {
-				// alert("WINNER");
+				// winningOptions.a1.backgroundColor = "blue";
+				// winningOptions.a2.backgroundColor = "blue";
+				// winningOptions.a3.backgroundColor = "blue";
+
+				winner.aHor.map(item => {
+					return (item.style.backgroundColor = "blue");
+				});
+
 				let btn = document.createElement("BUTTON");
 				btn.className = "btn btn-primary";
 				btn.innerHTML = "Reset";
@@ -87,19 +105,55 @@ export class Home extends React.Component {
 		return (
 			<div className="parent">
 				<div className="as">
-					<div className="cell" id="a1" onClick={e => this.xo(e)} />
-					<div className="cell" id="a2" onClick={e => this.xo(e)} />
-					<div className="cell" id="a3" onClick={e => this.xo(e)} />
+					<div
+						className="cell aHor a1Virt a1Diag"
+						id="a1"
+						onClick={e => this.xo(e)}
+					/>
+					<div
+						className="cell aHor a2Virt"
+						id="a2"
+						onClick={e => this.xo(e)}
+					/>
+					<div
+						className="cell aHor a3Virt a3Diag"
+						id="a3"
+						onClick={e => this.xo(e)}
+					/>
 				</div>
 				<div className="bs">
-					<div className="cell" id="b1" onClick={e => this.xo(e)} />
-					<div className="cell" id="b2" onClick={e => this.xo(e)} />
-					<div className="cell" id="b3" onClick={e => this.xo(e)} />
+					<div
+						className="cell bHor a1Virt"
+						id="b1"
+						onClick={e => this.xo(e)}
+					/>
+					<div
+						className="cell bHor a2Virt a1Diag a3Diag"
+						id="b2"
+						onClick={e => this.xo(e)}
+					/>
+					<div
+						className="cell bHor a3Virt"
+						id="b3"
+						onClick={e => this.xo(e)}
+					/>
 				</div>
 				<div className="cs">
-					<div className="cell" id="c1" onClick={e => this.xo(e)} />
-					<div className="cell" id="c2" onClick={e => this.xo(e)} />
-					<div className="cell" id="c3" onClick={e => this.xo(e)} />
+					<div
+						className="cell cHor a1Virt a3Diag"
+						id="c1"
+						onClick={e => this.xo(e)}
+					/>
+					<div
+						className="cell cHor a2Virt"
+						id="c2"
+						onClick={e => this.xo(e)}
+					/>
+					<div
+						className="cell cHor a3Virt a1Diag"
+						id="c3"
+						onClick={e => this.xo(e)}
+					/>
 				</div>
 			</div>
 		);
