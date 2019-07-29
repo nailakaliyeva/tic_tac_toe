@@ -44,12 +44,14 @@ export class Home extends React.Component {
 		// 1st winning option comparison
 		if (comp.a1 === comp.a2 && comp.a1 === comp.a3 && comp.a1 !== "") {
 			setTimeout(function() {
+				// alert("WINNER");
 				let btn = document.createElement("BUTTON");
 				btn.className = "btn btn-primary";
 				btn.innerHTML = "Reset";
-				btn.onClick = window.location.reload();
 				document.querySelector(".parent").appendChild(btn);
-				alert("WINNER");
+				btn.onclick = () => {
+					window.location.reload();
+				};
 			}, 100);
 		}
 		// 2nd winning option comparison
